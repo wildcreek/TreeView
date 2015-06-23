@@ -6,6 +6,7 @@ import java.util.List;
 import org.w3c.dom.NamedNodeMap;
 
 import android.util.Log;
+import android.view.View;
 
 /**
  * 
@@ -62,6 +63,22 @@ public class Node {
 	public void setIcon(int icon) {
 		this.icon = icon;
 	}
+	
+	private int lineTopVisibility = View.VISIBLE;
+	public void setLineTopVisibility(int lineTopVisibility){
+		this.lineTopVisibility = lineTopVisibility;
+	}
+	public int getLineTopVisiblity(){
+		return lineTopVisibility;
+	}
+	private int lineBottomVisibility = View.VISIBLE;
+	public void setLineBootomVisibility(int lineBottomVisibility){
+		this.lineBottomVisibility = lineBottomVisibility;
+	}
+	public int getLineBottomVisiblity(){
+		return lineBottomVisibility;
+	}
+	
  
 	public int getId() {
 		return id;

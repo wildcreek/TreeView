@@ -43,18 +43,12 @@ public class SimpleTreeAdapter<T> extends TreeListViewAdapter<T> {
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-
-		if (node.getIcon() == -1) {
-			viewHolder.line_Top.setVisibility(View.INVISIBLE);
-			viewHolder.line_Bottom.setVisibility(View.INVISIBLE);
-			viewHolder.icon.setImageResource(node.getIcon());
-		} else {
-			viewHolder.icon.setVisibility(View.VISIBLE);
-//			viewHolder.line_Top.setVisibility(View.INVISIBLE);
-//			viewHolder.line_Bottom.setVisibility(View.INVISIBLE);
-			viewHolder.icon.setImageResource(node.getIcon());
-		}
-
+ 
+		viewHolder.icon.setVisibility(View.VISIBLE);
+		viewHolder.line_Top.setVisibility(node.getLineTopVisiblity());
+		viewHolder.line_Bottom.setVisibility(node.getLineBottomVisiblity());
+		viewHolder.icon.setImageResource(node.getIcon());
+		  
 		viewHolder.label.setText(node.getName());
 
 		return convertView;

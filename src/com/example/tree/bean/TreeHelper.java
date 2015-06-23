@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.view.View;
+
 import com.example.tree_view.R;
  
 
@@ -159,41 +161,34 @@ public class TreeHelper {
 	 * @param node
 	 */
 	private static void setNodeIcon(Node node) {
-		// if (node.getChildren().size() > 0 && node.isExpand()) {
-		// if(node.getLevel()==0){
-		// node.setIcon(R.drawable.tree_indicator1_expand);
-		// }else if(node.getLevel()==1){
-		// node.setIcon(R.drawable.tree_indicator2_expand);
-		// }else if(node.getLevel()==2){
-		// node.setIcon(R.drawable.tree_indicator3);
-		// }
-		//
-		// } else if (node.getChildren().size() > 0 && !node.isExpand()) {
-		// if(node.getLevel()==0){
-		// node.setIcon(R.drawable.tree_indicator1_fold);
-		// }else if(node.getLevel()==1){
-		// node.setIcon(R.drawable.tree_indicator2_fold);
-		// }else if(node.getLevel()==2){
-		// node.setIcon(R.drawable.tree_indicator3_fold);
-		// }
-		// } else
-		// node.setIcon(-1);
+ 
 		if (node.getLevel() == 0) {
 			if (node.getChildren().size() > 0 && node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator1_expand);
+				node.setLineTopVisibility(View.INVISIBLE);
+				node.setLineBootomVisibility(View.VISIBLE);
 			} else if (node.getChildren().size() > 0 && !node.isExpand()) {
+				node.setLineTopVisibility(View.INVISIBLE);
+				node.setLineBootomVisibility(View.INVISIBLE);
 				node.setIcon(R.drawable.tree_indicator1_fold);
 			} else {
+				node.setLineTopVisibility(View.INVISIBLE);
+				node.setLineBootomVisibility(View.INVISIBLE);
 				node.setIcon(R.drawable.tree_indicator1_none);
 			}
 
 		} else if (node.getLevel() == 1) {
+			
 			if (node.getChildren().size() > 0 && node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator2_expand);
 			} else if (node.getChildren().size() > 0 && !node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator2_fold);
 			} else {
 				node.setIcon(R.drawable.tree_indicator2_none);
+			}
+			if(node.getId() == node.getParent().getChildren().size() + 1){
+				node.setLineTopVisibility(View.VISIBLE);
+				node.setLineBootomVisibility(View.INVISIBLE);
 			}
 
 		} else if (node.getLevel() == 2) {
@@ -214,6 +209,46 @@ public class TreeHelper {
 				node.setIcon(R.drawable.tree_indicator4_none);
 			}
 		}
+		
+		
+//		if (node.getChildren().size() > 0 && node.isExpand()) {
+//			if(node.getLevel() == 0){
+//				node.setIcon(R.drawable.tree_indicator1_expand);
+//				node.setLineTopVisibility(View.INVISIBLE);
+//				node.setLineBootomVisibility(View.VISIBLE);
+//			}else if(node.getLevel() == 1){
+//				node.setIcon(R.drawable.tree_indicator2_expand);
+//			}else if(node.getLevel() == 2){
+//				node.setIcon(R.drawable.tree_indicator3_expand);
+//			}else if(node.getLevel() == 3){
+//				node.setIcon(R.drawable.tree_indicator4_expand);
+//			}
+//			
+//		} else if (node.getChildren().size() > 0 && !node.isExpand()) {
+//			if(node.getLevel() == 0){
+//				node.setLineTopVisibility(View.INVISIBLE);
+//				node.setLineBootomVisibility(View.INVISIBLE);
+//				node.setIcon(R.drawable.tree_indicator1_fold);
+//			}else if(node.getLevel() == 1){
+//				node.setIcon(R.drawable.tree_indicator2_fold);
+//			}else if(node.getLevel() == 2){
+//				node.setIcon(R.drawable.tree_indicator3_fold);
+//			}else if(node.getLevel() == 3){
+//				node.setIcon(R.drawable.tree_indicator4_fold);
+//			}
+//		} else {
+//			if(node.getLevel() == 0){
+//				node.setLineTopVisibility(View.INVISIBLE);
+//				node.setLineBootomVisibility(View.INVISIBLE);
+//				node.setIcon(R.drawable.tree_indicator1_none);
+//			}else if(node.getLevel() == 1){
+//				node.setIcon(R.drawable.tree_indicator2_none);
+//			}else if(node.getLevel() == 2){
+//				node.setIcon(R.drawable.tree_indicator3_none);
+//			}else if(node.getLevel() == 3){
+//				node.setIcon(R.drawable.tree_indicator4_none);
+//			}
+//		}
 	}
 
 }
