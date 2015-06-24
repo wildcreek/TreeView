@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal"
-    android:divider="@null"
-    android:dividerPadding="0dp"
-    android:padding="0dp" >
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
 
     <RelativeLayout
         android:layout_width="50dp"
-        android:layout_height="50dp" 
-        >
+        android:layout_height="50dp" >
 
         <View
             android:id="@+id/line_top"
@@ -42,9 +39,12 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_weight="1"
         android:gravity="center_vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:orientation="vertical" >
 
         <TextView
@@ -63,6 +63,20 @@
             android:text="共15题，答对3题，正确率20%"
             android:textColor="@android:color/darker_gray"
             android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingRight="10dp"
+         >
+        <ImageButton 
+            android:id="@+id/ib_practice"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/selector_btn_wrong_practice"/>
     </LinearLayout>
 
 </LinearLayout>
