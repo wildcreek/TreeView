@@ -1,6 +1,9 @@
-package com.example.tree.bean;
+package com.example.adapter;
 
 import java.util.List;
+
+import com.example.tree.bean.Node;
+import com.example.tree.bean.TreeHelper;
 
 import android.content.Context;
 import android.view.LayoutInflater;

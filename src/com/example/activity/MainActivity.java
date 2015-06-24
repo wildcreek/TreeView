@@ -1,12 +1,14 @@
-package com.example.tree_view;
+package com.example.activity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.adapter.SimpleTreeAdapter;
+import com.example.adapter.TreeListViewAdapter;
+import com.example.adapter.TreeListViewAdapter.OnTreeNodeClickListener;
 import com.example.bean.FileBean;
 import com.example.tree.bean.Node;
-import com.example.tree.bean.TreeListViewAdapter;
-import com.example.tree.bean.TreeListViewAdapter.OnTreeNodeClickListener;
+import com.example.tree_view.R;
 
 import android.app.Activity;
 import android.os.Bundle;

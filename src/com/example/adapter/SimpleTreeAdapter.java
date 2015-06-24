@@ -1,9 +1,9 @@
-package com.example.tree_view;
+package com.example.adapter;
 
 import java.util.List;
 
 import com.example.tree.bean.Node;
-import com.example.tree.bean.TreeListViewAdapter;
+import com.example.tree_view.R;
 
 import android.content.Context;
 import android.view.View;
