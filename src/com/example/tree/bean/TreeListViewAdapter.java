@@ -11,13 +11,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-/**
- * http://blog.csdn.net/lmj623565791/article/details/40212367
- * 
- * @author zhy
- * 
- * @param <T>
- */
+ 
 public abstract class TreeListViewAdapter<T> extends BaseAdapter {
 
 	protected Context mContext;

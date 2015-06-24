@@ -8,11 +8,7 @@ import android.view.View;
 
 import com.example.tree_view.R;
  
-
-/**
- * 
- * 
- */
+ 
 public class TreeHelper {
 	/**
 	 * 传入我们的普通bean，转化为我们排序后的Node

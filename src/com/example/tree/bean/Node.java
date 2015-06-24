@@ -8,12 +8,7 @@ import org.w3c.dom.NamedNodeMap;
 import android.util.Log;
 import android.view.View;
 
-/**
- * 
- * 
- * @author zhy
- * 
- */
+ 
 public class Node {
 
 	private int id;
