@@ -10,9 +10,7 @@ import com.example.tree_view.R;
  
 
 /**
- * http://blog.csdn.net/lmj623565791/article/details/40212367
  * 
- * @author zhy
  * 
  */
 public class TreeHelper {
@@ -181,23 +179,40 @@ public class TreeHelper {
 			
 			if (node.getChildren().size() > 0 && node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator2_expand);
+				node.setLineTopVisibility(View.VISIBLE);
+				node.setLineBootomVisibility(View.VISIBLE);
+				 
 			} else if (node.getChildren().size() > 0 && !node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator2_fold);
+				if(node.isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			} else {
 				node.setIcon(R.drawable.tree_indicator2_none);
-			}
-			if(node.getId() == node.getParent().getChildren().size() + 1){
-				node.setLineTopVisibility(View.VISIBLE);
-				node.setLineBootomVisibility(View.INVISIBLE);
+				if(node.isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			}
 
+			
+		  
 		} else if (node.getLevel() == 2) {
 			if (node.getChildren().size() > 0 && node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator3_expand);
 			} else if (node.getChildren().size() > 0 && !node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator3_fold);
+				if(node.isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			} else {
 				node.setIcon(R.drawable.tree_indicator3_none);
+				if(node.isLastInParent() && node.getParent().isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			}
 
 		}else{
@@ -205,50 +220,20 @@ public class TreeHelper {
 				node.setIcon(R.drawable.tree_indicator4_expand);
 			} else if (node.getChildren().size() > 0 && !node.isExpand()) {
 				node.setIcon(R.drawable.tree_indicator4_fold);
+				if(node.isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			} else {
 				node.setIcon(R.drawable.tree_indicator4_none);
+				if(node.isLastInParent() && node.getParent().isLastInParent()&& 
+						node.getParent().getParent().isLastInParent()){
+					node.setLineTopVisibility(View.VISIBLE);
+					node.setLineBootomVisibility(View.INVISIBLE);
+				}
 			}
 		}
-		
-		
-//		if (node.getChildren().size() > 0 && node.isExpand()) {
-//			if(node.getLevel() == 0){
-//				node.setIcon(R.drawable.tree_indicator1_expand);
-//				node.setLineTopVisibility(View.INVISIBLE);
-//				node.setLineBootomVisibility(View.VISIBLE);
-//			}else if(node.getLevel() == 1){
-//				node.setIcon(R.drawable.tree_indicator2_expand);
-//			}else if(node.getLevel() == 2){
-//				node.setIcon(R.drawable.tree_indicator3_expand);
-//			}else if(node.getLevel() == 3){
-//				node.setIcon(R.drawable.tree_indicator4_expand);
-//			}
-//			
-//		} else if (node.getChildren().size() > 0 && !node.isExpand()) {
-//			if(node.getLevel() == 0){
-//				node.setLineTopVisibility(View.INVISIBLE);
-//				node.setLineBootomVisibility(View.INVISIBLE);
-//				node.setIcon(R.drawable.tree_indicator1_fold);
-//			}else if(node.getLevel() == 1){
-//				node.setIcon(R.drawable.tree_indicator2_fold);
-//			}else if(node.getLevel() == 2){
-//				node.setIcon(R.drawable.tree_indicator3_fold);
-//			}else if(node.getLevel() == 3){
-//				node.setIcon(R.drawable.tree_indicator4_fold);
-//			}
-//		} else {
-//			if(node.getLevel() == 0){
-//				node.setLineTopVisibility(View.INVISIBLE);
-//				node.setLineBootomVisibility(View.INVISIBLE);
-//				node.setIcon(R.drawable.tree_indicator1_none);
-//			}else if(node.getLevel() == 1){
-//				node.setIcon(R.drawable.tree_indicator2_none);
-//			}else if(node.getLevel() == 2){
-//				node.setIcon(R.drawable.tree_indicator3_none);
-//			}else if(node.getLevel() == 3){
-//				node.setIcon(R.drawable.tree_indicator4_none);
-//			}
-//		}
+ 
 	}
 
 }

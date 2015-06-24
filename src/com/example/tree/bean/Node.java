@@ -78,8 +78,11 @@ public class Node {
 	public int getLineBottomVisiblity(){
 		return lineBottomVisibility;
 	}
+	//是否是父节点中的最后一个节点
+	public boolean isLastInParent(){
+		return id == parent.getChildren().get(0).getId() + parent.getChildren().size() - 1;
+	}
 	
- 
 	public int getId() {
 		return id;
 	}
