@@ -15,6 +15,12 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
  
+
+/**
+ * @version 1.0
+ * @author hzc
+ * @date 2015-6-24
+ */
 public class MainActivity extends Activity {
 	private List<FileBean> mDatas = new ArrayList<FileBean>();
 	private ListView mTree;
