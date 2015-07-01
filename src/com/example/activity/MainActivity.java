@@ -56,21 +56,21 @@ public class MainActivity extends Activity {
 	private void initDatas() {
  
 
-		mDatas.add(new FileBean(1, 0, "言语理解与表达"));
-		mDatas.add(new FileBean(2, 0, "数量关系"));
-		mDatas.add(new FileBean(3, 1, "逻辑填空"));
-		mDatas.add(new FileBean(4, 1, "语句表达"));
-		mDatas.add(new FileBean(5, 2, "排列组合"));
-		mDatas.add(new FileBean(6, 2, "概率计算"));
+		mDatas.add(new FileBean(1, 0, "言语理解与表达",1.9f));
+		mDatas.add(new FileBean(2, 0, "数量关系",2.9f));
+		mDatas.add(new FileBean(3, 1, "逻辑填空",3.9f));
+		mDatas.add(new FileBean(4, 1, "语句表达",1.9f));
+		mDatas.add(new FileBean(5, 2, "排列组合",1.9f));
+		mDatas.add(new FileBean(6, 2, "概率计算",1.9f));
 
-		mDatas.add(new FileBean(7, 3, "实词填空"));
+		mDatas.add(new FileBean(7, 3, "实词填空",1.9f));
 		
-		mDatas.add(new FileBean(8, 3, "虚词填空"));
+		mDatas.add(new FileBean(8, 3, "虚词填空",1.9f));
 
-		mDatas.add(new FileBean(9, 4, "语句排序"));
-		mDatas.add(new FileBean(10, 4, "语句填空"));
-		mDatas.add(new FileBean(11, 7, "实词-动词"));
-		mDatas.add(new FileBean(12, 7, "实词-名词"));
+		mDatas.add(new FileBean(9, 4, "语句排序",1.9f));
+		mDatas.add(new FileBean(10, 4, "语句填空",1.9f));
+		mDatas.add(new FileBean(11, 7, "实词-动词",1.9f));
+		mDatas.add(new FileBean(12, 7, "实词-名词",1.9f));
 
 	}
 

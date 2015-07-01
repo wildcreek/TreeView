@@ -15,12 +15,15 @@ public class FileBean {
 	private String name;
 	private long length;
 	private String desc;
+	private float rating; 
+	
 
-	public FileBean(int _id, int parentId, String name) {
+	public FileBean(int _id, int parentId, String name,float rating) {
 		super();
 		this._id = _id;
 		this.parentId = parentId;
 		this.name = name;
+		this.rating = rating ;
 	}
 
 }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,8 @@ public class SimpleTreeAdapter<T> extends TreeListViewAdapter<T> {
 					.findViewById(R.id.line_bottom);
 			viewHolder.ib_practice = (ImageButton) convertView
 					.findViewById(R.id.ib_practice);
+			viewHolder.ratingBar = (RatingBar) convertView
+					.findViewById(R.id.rating_bar);
 			convertView.setTag(viewHolder);
 
 		} else {
@@ -53,6 +56,7 @@ public class SimpleTreeAdapter<T> extends TreeListViewAdapter<T> {
 		viewHolder.line_Bottom.setVisibility(node.getLineBottomVisiblity());
 		viewHolder.icon.setImageResource(node.getIcon());
 		viewHolder.label.setText(node.getName());
+		viewHolder.ratingBar.setRating(1.9f);
 		
 		viewHolder.ib_practice.setOnClickListener(new OnClickListener() {
 			
@@ -69,6 +73,7 @@ public class SimpleTreeAdapter<T> extends TreeListViewAdapter<T> {
 		View line_Top;
 		View line_Bottom;
 		ImageButton ib_practice;
+		RatingBar ratingBar;
 	}
 
 }

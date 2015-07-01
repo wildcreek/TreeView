@@ -43,9 +43,9 @@
         android:layout_height="50dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:paddingTop="5dp"
+        android:orientation="vertical"
         android:paddingBottom="5dp"
-        android:orientation="vertical" >
+        android:paddingTop="5dp" >
 
         <TextView
             android:id="@+id/id_treenode_label"
@@ -55,28 +55,44 @@
             android:text="言语理解与表达"
             android:textSize="17dp" />
 
-        <TextView
-            android:id="@+id/id_treenode_desc"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="共15题，答对3题，正确率20%"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14dp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="掌握程度"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                style="@style/roomRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:numStars="5"
+                android:rating="4" >
+            </RatingBar>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_gravity="center"
-        android:paddingRight="10dp"
-         >
-        <ImageButton 
+        android:orientation="vertical"
+        android:paddingRight="10dp" >
+
+        <ImageButton
             android:id="@+id/ib_practice"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:background="@drawable/selector_btn_wrong_practice"/>
+            android:background="@drawable/selector_btn_wrong_practice" />
     </LinearLayout>
 
 </LinearLayout>
